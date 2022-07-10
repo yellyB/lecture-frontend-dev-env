@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>검색</title>
     <!-- TODO: CSS 파일을 엔트리포인트(app.js)에서 로딩하세요. 
       웹팩에서 로딩할수 있도록 로더를 설정해야 합니다. -->
+    <!--
+        1.
+          CSS파일을 JS에서 모듈처럼 가져오려면 css로더필요.
+          그리고 이게 html에 주입이 되려면 스타일로더도 필요.
+          때문에 두개 모두 설치
+          npm i style-loader css-loader
+
+          근데 버전때문에 this.getOptions is not a function 에러가 났음.
+          이건 버전때문이라고 해서 버전을 명시해서 패키지 다시 설치해줌
+           npm i css-loader@3 file-loader@5 style-loader@1
+           
+        2. webpack설정파일에 규칙 추가.
+          이렇게 해야 엔트리포인트인 app.js에서 css를 모듈로 임포트 가능
+      -->
   </head>
   <body>
     <div id="app">
       <header>
         <h2 class="container">검색</h2>
       </header>
-  
+
       <div class="container">
         <form class="FormView">
-          <input type="text" placeholder="검색어를 입력하세요" autofocus>
+          <input type="text" placeholder="검색어를 입력하세요" autofocus />
           <button type="reset" class="btn-reset"></button>
         </form>
-  
+
         <div class="content">
           <div id="tabs"></div>
           <div id="search-keyword"></div>
