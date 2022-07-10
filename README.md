@@ -1,7 +1,7 @@
     
-### 1-webpack/1-entry 웹팩 엔트리/아웃풋 
+### :star: 1-webpack/1-entry 웹팩 엔트리/아웃풋 
 
-<b> TODO: 웹팩으로 빌드한 자바스크립트를 여기에 로딩하세요</b>  
+<b> :paperclip: TODO: 웹팩으로 빌드한 자바스크립트를 여기에 로딩하세요</b>  
 
       1. npm init 으로 프로젝트 생성 - package.json파일 생성됨(-y옵션 붙이면 기본설정으로 생성됨)  
       2. webpack(번들 작업을 하는), webpack-cli(웹팩을 터미널 명령어로 사용 가능한) 두가지 패키지를 설치  
@@ -12,13 +12,18 @@
       5. index.html에 스크립트 불러오기.  
   
   
-### 1-webpack/2-loader: 웹팩 로더  
-css-loader: 웹팩이 css파일을 자바스크립트에서 모듈로 가져올수 있도록 css파일을 처리해줌  
-style-loader: 자바스크립트로 변경된 스타일 코드를 HTML에 넣어줌. CSS가 자바스크립트 코드로만 있는데 이걸 CSSOM으로.  
-file-loader: 이미지 처리해주는 로더. webpack.config에서 name 설정에서 hash설정을 하면 매번 파일이름이 달라져서 캐시 관리에 용이함  
-url-loader: 사용하는 이미지가 많으면 서버부담. 때문에 작은 파일은 data URL사용해서 바로 HTML로 넣어줘서 네트워크 통신 한단계 줄이기  
+### :star: 1-webpack/2-loader: 웹팩 로더  
+  
+    
+  :notebook: note
+```
+- css-loader: 웹팩이 css파일을 자바스크립트에서 모듈로 가져올수 있도록 css파일을 처리해줌  
+- style-loader: 자바스크립트로 변경된 스타일 코드를 HTML에 넣어줌. CSS가 자바스크립트 코드로만 있는데 이걸 CSSOM으로.  
+- file-loader: 이미지 처리해주는 로더. webpack.config에서 name 설정에서 hash설정을 하면 매번 파일이름이 달라져서 캐시 관리에 용이함  
+- url-loader: 사용하는 이미지가 많으면 서버부담. 때문에 작은 파일은 data URL사용해서 바로 HTML로 넣어줘서 네트워크 통신 한단계 줄이기  
+```
 
-<b>TODO: CSS 파일을 엔트리포인트(app.js)에서 로딩하세요. 웹팩에서 로딩할수 있도록 로더를 설정해야 합니다.</b>  
+<b>:paperclip: TODO: CSS 파일을 엔트리포인트(app.js)에서 로딩하세요. 웹팩에서 로딩할수 있도록 로더를 설정해야 합니다.</b>  
 
       1.
           CSS파일을 JS에서 모듈처럼 가져오려면 css로더필요.  
@@ -33,7 +38,7 @@ url-loader: 사용하는 이미지가 많으면 서버부담. 때문에 작은 �
         2. webpack설정파일에 규칙 추가.  
           이렇게 해야 엔트리포인트인 app.js에서 css를 모듈로 임포트 가능  
           
-<b>TODO: 파일을 로딩할수 있도록 웹팩 로더 설정을 추가하세요 (file-loader나 image-loader)</b>
+<b>:paperclip: TODO: 파일을 로딩할수 있도록 웹팩 로더 설정을 추가하세요 (file-loader나 image-loader)</b>
 
        1. file-loader설치  
        2. webpack 설정파일에 파일로더 설정 추가  
@@ -42,7 +47,7 @@ url-loader: 사용하는 이미지가 많으면 서버부담. 때문에 작은 �
  
  
  ---
- <br/><br/><br/><br/><br/>
+ <br/><br/><br/>
  # 프론트엔드 개발 환경의 이해 
 
 "프론트엔드 개발 환경의 이해" 강의 자료입니다.
