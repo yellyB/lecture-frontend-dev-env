@@ -1,5 +1,5 @@
     
-### :star: 1-webpack/1-entry 웹팩 엔트리/아웃풋 
+## :star: 1-webpack/1-entry 웹팩 엔트리/아웃풋 
 
 <b> :paperclip: TODO: 웹팩으로 빌드한 자바스크립트를 여기에 로딩하세요</b>  
 
@@ -12,7 +12,7 @@
       5. index.html에 스크립트 불러오기.  
   
   
-### :star: 1-webpack/2-loader: 웹팩 로더  
+## :star: 1-webpack/2-loader: 웹팩 로더  
   
     
   :notebook: note
