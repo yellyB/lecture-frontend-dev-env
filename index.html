@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>검색</title>
-    <link rel="stylesheet" href="src/main.css" />
+    <!-- TODO: CSS 파일을 엔트리포인트(app.js)에서 로딩하세요. 
+      웹팩에서 로딩할수 있도록 로더를 설정해야 합니다. -->
   </head>
   <body>
     <div id="app">
       <header>
         <h2 class="container">검색</h2>
       </header>
-
+  
       <div class="container">
         <form class="FormView">
-          <input type="text" placeholder="검색어를 입력하세요" autofocus />
+          <input type="text" placeholder="검색어를 입력하세요" autofocus>
           <button type="reset" class="btn-reset"></button>
         </form>
-
+  
         <div class="content">
           <div id="tabs"></div>
           <div id="search-keyword"></div>
@@ -27,16 +28,6 @@
       </div>
     </div>
 
-    <!-- TODO: 웹팩으로 빌드한 자바스크립트를 여기에 로딩하세요 -->
-    <!-- 
-      1. npm init 으로 프로젝트 생성(package.json파일 생성 / -y옵션 붙이면 기본설정으로 생성됨)
-      2. webpack, webpack-cli 두가지 패키지를 설치
-      3. 웹팩 설정파일을 만듦.
-        (명령어로 해도 되지만 난 에러가 났기도 하고 명령어는 너무 길기 때문에 설정파일이 편함)
-      3-1. mode, entry, output 설정 해줌
-      4. npm 스크립트에 build 명령어 추가해서 build 명령어 실행해줌
-      5. index.html에 스크립트 불러오기.
-    -->
-    <script src="./dist/main.js"></script>
+    <script type="text/javascript" src="dist/main.js"></script>
   </body>
 </html>
