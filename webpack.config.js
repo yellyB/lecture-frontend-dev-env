@@ -3,36 +3,33 @@ const path = require("path");
 module.exports = {
   mode: "development",
   entry: {
-    main: "./src/app.js",
+    main: "./src/app.js"
   },
   output: {
     filename: "[name].js",
-    path: path.resolve("./dist"),
+    path: path.resolve("./dist")
   },
   module: {
     rules: [
       {
-        test: /\.css$/, // css로 끝나는 모든 파일
-        use: ["style-loader", "css-loader"], // 순서 중요: 배열의 뒤에서부터 순서대로 처리
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
       },
-      // {
-      //   test: /\.(jpg|png)$/,
-      //   loader: "file-loader",
-      //   options: {
-      //     name: "[name].[ext]?[hash]", // hash값은 웹팩이 빌드할때마다 변경되는 해쉬 값
-      //     publicPath: "./dist", // dist폴더에 있는 이미지 호출하도록: index파일이 src바깥에 있기 때문에 dist에 있는거 호출한다고 알려주기
-      //   },
-      // },
-
       {
-        test: /\.(jpg|png)$/,
+        test: /\.(png|jpg|svg|gif)$/,
         loader: "url-loader",
         options: {
-          name: "[name].[ext]?[hash]", // hash값은 웹팩이 빌드할때마다 변경되는 해쉬 값
-          publicPath: "./dist", // dist폴더에 있는 이미지 호출하도록: index파일이 src바깥에 있기 때문에 dist에 있는거 호출한다고 알려주기
-          limit: 10000, //100kb미만은 url로더가 처리. 그 이상은 파일로더가 처리
-        },
-      },
-    ],
-  },
+          name: "[name].[ext]?[hash]",
+          limit: 10000 // 10Kb
+        }
+      }
+    ]
+  }
+  /**
+   * TODO: 아래 플러그인을 추가해서 번들 결과를 만들어 보세요.
+   * 1. BannerPlugin: 결과물에 빌드 시간을 출력하세요.
+   * 2. HtmlWebpackPlugin: 동적으로 html 파일을 생성하세요.
+   * 3. CleanWebpackPlugin: 빌드 전에 아웃풋 폴더를 깨끗히 정리하세요.
+   * 4. MiniCssExtractPlugin: 모듈에서 css 파일을 분리하세요.
+   */
 };
