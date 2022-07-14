@@ -25,8 +25,7 @@
 
 <b>:paperclip: TODO: CSS 파일을 엔트리포인트(app.js)에서 로딩하세요. 웹팩에서 로딩할수 있도록 로더를 설정해야 합니다.</b>  
 
-      1.
-          CSS파일을 JS에서 모듈처럼 가져오려면 css로더필요.  
+      1. CSS파일을 JS에서 모듈처럼 가져오려면 css로더필요.  
           그리고 이게 html에 주입이 되려면 스타일로더도 필요.  
           때문에 두개 모두 설치  
           npm i style-loader css-loader  
@@ -35,7 +34,7 @@
           이건 버전때문이라고 해서 버전을 명시해서 패키지 다시 설치해줌  
            npm i css-loader@3 file-loader@5 style-loader@1  
            
-        2. webpack설정파일에 규칙 추가.  
+      2. webpack설정파일에 규칙 추가.  
           이렇게 해야 엔트리포인트인 app.js에서 css를 모듈로 임포트 가능  
           
 <b>:paperclip: TODO: 파일을 로딩할수 있도록 웹팩 로더 설정을 추가하세요 (file-loader나 image-loader)</b>
@@ -79,7 +78,37 @@
         3. style-loader대신에 mini-css-extract 써야하므로 삼항연산자로 style-loader대신 mini css 로더 불러오도록 해줌
         * (NODE_ENV에러나서 아직 해결중. 일단은 ===연산자를 !==로 변경함)
 
-  
+
+
+ ## :star: 2-babel/1-babel 바벨
+
+<b> :paperclip: TODO: babel-loader를 구성해 보세요.</b>  
+
+      1. npm i babel-loader
+      2. 설치 후 바벨로더 설정해주기.
+       *  .js 파일을 만나면 웹팩이 바벨로더 실행하도록 해줬는데
+          바벨을 실행하려면 바벨코어 필요.
+          npm i @babel/core
+          그 후 바벨코어를 위해 바벨설정파일에서 설정해줌
+       * 바벨로더가 엔트리포인트부터 모든 js파일 찾아갈 때 노드모듈 파일은 exclude로 빼주기
+
+      
+<b>:paperclip: TODO: IE11에서도 동작하는 자바스크립트로 변환할수 있게 바벨을 구성하세요.</b>
+
+        1. preset을 설치
+        2. 이 단계에서 build를 실행하는데 babel/core를 찾을 수 없다는 에러 메시지만 뜨길래
+            여러가지 시도를 다 해보았는데
+            결론은 바벨코어와 바벨로더를 데브디펜던시로 설치해야 했었다.
+            혹시나해서 바벨코어만 -dev로 설치해보았었는데 둘 다 그렇게 설치해야했었나봄
+             npm install babel-core babel-loader --save-dev
+        3. 빌드된 파일에서 찾아보면 기존에 있던 const는 검색결과 없고 var만 존재.
+            하지만 Promise같은건 남아있기 때문에 따로 설정 필요
+            
+        * 여기서 babel.config에 폴리필 쓰기위한 부분을 추가 설정해준다.
+          IE가 이해하지 못하는 코드(Promise같은)에 폴리필 임포트하는 코드 추가함
+          임포트 될 라이브러리 사용해야함 (= corejs)
+
+    
  <br/><br/><br/>
  22.07.04 ~ ing
  
