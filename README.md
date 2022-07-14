@@ -49,7 +49,7 @@
  
  ## :star: 1-webpack/3-plugin 웹팩 플러그인
 
-<b> :paperclip: TODO: 아래 플러그인을 추가해서 번들 결과를 만들어 보세요.</b>
+<b> :paperclip: TODO: 아래 플러그인을 추가해서 번들 결과를 만들어 보세요.</b>  
     1. BannerPlugin: 결과물에 빌드 시간을 출력하세요.  
     2. HtmlWebpackPlugin: 동적으로 html 파일을 생성하세요.  
     3. CleanWebpackPlugin: 빌드 전에 아웃풋 폴더를 깨끗히 정리하세요.  
@@ -80,7 +80,9 @@
         * (NODE_ENV에러나서 아직 해결중. 일단은 ===연산자를 !==로 변경함)
 
   
-  
+ <br/><br/><br/>
+ 22.07.04 ~ ing
+ 
  ---
  <br/><br/><br/>
  # 프론트엔드 개발 환경의 이해 
