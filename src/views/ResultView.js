@@ -1,4 +1,8 @@
 import View from "./View.js";
+<<<<<<< HEAD
+=======
+import defaultImage from "../images/default-image.jpg";
+>>>>>>> d8ab574 (실습4: 바벨)
 
 export default class ResultView extends View {
   constructor(el) {
