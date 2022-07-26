@@ -1,38 +1,66 @@
 const path = require("path");
+const webpack = require("webpack");
+
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+process.env.NODE_ENV = process.env.NODE_ENV || "development";
 
 module.exports = {
   mode: "development",
   entry: {
-    main: "./src/app.js",
+    main: "./src/app.js"
   },
   output: {
     filename: "[name].js",
-    path: path.resolve("./dist"),
+    path: path.resolve("./dist")
   },
   module: {
     rules: [
       {
-        test: /\.css$/, // css로 끝나는 모든 파일
-        use: ["style-loader", "css-loader"], // 순서 중요: 배열의 뒤에서부터 순서대로 처리
+        test: /\.(scss|css)$/,
+        use: [
+          process.env.NODE_ENV === "production"
+            ? MiniCssExtractPlugin.loader // 프로덕션 환경
+            : "style-loader", // 개발 환경
+          "css-loader"
+        ]
       },
-      // {
-      //   test: /\.(jpg|png)$/,
-      //   loader: "file-loader",
-      //   options: {
-      //     name: "[name].[ext]?[hash]", // hash값은 웹팩이 빌드할때마다 변경되는 해쉬 값
-      //     publicPath: "./dist", // dist폴더에 있는 이미지 호출하도록: index파일이 src바깥에 있기 때문에 dist에 있는거 호출한다고 알려주기
-      //   },
-      // },
-
       {
-        test: /\.(jpg|png)$/,
+        test: /\.(png|jpg|svg|gif)$/,
         loader: "url-loader",
         options: {
-          name: "[name].[ext]?[hash]", // hash값은 웹팩이 빌드할때마다 변경되는 해쉬 값
-          publicPath: "./dist", // dist폴더에 있는 이미지 호출하도록: index파일이 src바깥에 있기 때문에 dist에 있는거 호출한다고 알려주기
-          limit: 10000, //100kb미만은 url로더가 처리. 그 이상은 파일로더가 처리
-        },
-      },
-    ],
+          name: "[name].[ext]?[hash]",
+          limit: 10000 // 10Kb
+        }
+      }
+      /**
+       * TODO: babel-loader를 구성해 보세요.
+       */
+    ]
   },
+  plugins: [
+    new webpack.BannerPlugin({
+      banner: `빌드 날짜: ${new Date().toLocaleString()}`
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+      templateParameters: {
+        env: process.env.NODE_ENV === "development" ? "(개발용)" : ""
+      },
+      minify:
+        process.env.NODE_ENV === "production"
+          ? {
+              collapseWhitespace: true, // 빈칸 제거
+              removeComments: true // 주석 제거
+            }
+          : false,
+      hash: process.env.NODE_ENV === "production"
+    }),
+    new CleanWebpackPlugin(),
+    ...(process.env.NODE_ENV === "production"
+      ? [new MiniCssExtractPlugin({ filename: `[name].css` })]
+      : [])
+  ]
 };

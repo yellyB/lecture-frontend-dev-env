@@ -1,10 +1,4 @@
 import View from "./View.js";
-
-// TODO: 파일을 로딩할수 있도록 웹팩 로더 설정을 추가하세요 (file-loader나 image-loader)
-/*
- 1. file-loader설치
- 2. webpack 설정파일에 파일로더 설정 추가
-*/
 import defaultImage from "../images/default-image.jpg";
 
 export default class ResultView extends View {
@@ -12,7 +6,7 @@ export default class ResultView extends View {
     super(el);
 
     this.messages = {
-      NO_RESULT: "검색 결과가 없습니다",
+      NO_RESULT: "검색 결과가 없습니다"
     };
   }
 
