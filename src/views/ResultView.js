@@ -1,4 +1,9 @@
 import View from "./View.js";
+<<<<<<< HEAD
+=======
+import defaultImage from "../images/default-image.jpg";
+import "./ResultView.scss";
+>>>>>>> 70aa78c (실습5:사스)
 
 export default class ResultView extends View {
   constructor(el) {
