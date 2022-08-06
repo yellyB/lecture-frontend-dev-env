@@ -133,6 +133,25 @@
             그 후 웹팩 로더 설정에 sass-loader를 추가해준다
             
 
+ 
+    
+ ## :star: 3-lint/2-eslint ES린트
+
+<b> :paperclip: TODO: eslint를 구성해 보세요.</b>  
+
+    1. npm i eslint
+    2. npx eslint --init 한 후 터미널에서 설정을 선택해줌
+    3. 린트설정파일에 설정이 생성됨
+    
+<b> :paperclip: TODO eslint가 중복 세미콜론을 제거합니다.</b>  
+
+    1. package.json에 lint스크립트 추가해줌.
+        --fix옵션으로 자동으로 소스 고쳐지도록(문제에 나온 중복 세미콜론 제거됨)
+    2. 그리고 터미널에 
+         10:7  error  'foo' is assigned a value but never used  no-unused-vars
+        이와 같은 에러를 볼 수 있는데 foo 변수가 사용되지 않는다는 경고임
+        
+
  <br/><br/><br/>
  22.07.04 ~ ing
  
