@@ -109,6 +109,30 @@
           임포트 될 라이브러리 사용해야함 (= corejs)
 
     
+    
+ ## :star: 2-babel/2-sass 사스
+
+<b> :paperclip: TODO: SASS 코드를 사용할수 있겠끔 sass-loader를 구성하세요.</b>  
+<b> :paperclip: TODO: app.css 파일이 사라졌습니다. 이제는 app.scss를 불러올수 있도록 웹팩 구성을 추가하세요.</b>  
+
+
+            1.
+            npm run build를 실행해보면 아래와 같은 에러가 뜸
+
+            ERROR in ./src/views/FormView.scss 1:0
+            Module parse failed: Unexpected character '@' (1:0)
+
+            FormView.js에서 사스파일을 불러오는데 사스파일을 로더가 처리하지 못하는 문제임.
+            이걸 해결해주는것이 sass-loader
+
+            2.
+            sass-loader(웹팩에서 노드사스를 돌려줌) node-sass(사스코드를 css로 컴파일) webpack 세가지를 설치해야함
+            웹팩은 이미 있으니 npm i sass-loader node-sass 해줌
+
+            3.
+            그 후 웹팩 로더 설정에 sass-loader를 추가해준다
+            
+
  <br/><br/><br/>
  22.07.04 ~ ing
  
