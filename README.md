@@ -1,7 +1,7 @@
     
 ## :star: 1-webpack/1-entry 웹팩 엔트리/아웃풋 
 
-<b> :paperclip: TODO: 웹팩으로 빌드한 자바스크립트를 여기에 로딩하세요</b>  
+<b> :paperclip: TODO: 웹팩으로 빌드한 자바스크립트를 여기에 로딩하세요.(index.html)</b>  
 
       1. npm init 으로 프로젝트 생성 - package.json파일 생성됨(-y옵션 붙이면 기본설정으로 생성됨)  
       2. webpack(번들 작업을 하는), webpack-cli(웹팩을 터미널 명령어로 사용 가능한) 두가지 패키지를 설치  
@@ -23,7 +23,7 @@
 - url-loader: 사용하는 이미지가 많으면 서버부담. 때문에 작은 파일은 data URL사용해서 바로 HTML로 넣어줘서 네트워크 통신 한단계 줄이기  
 ```
 
-<b>:paperclip: TODO: CSS 파일을 엔트리포인트(app.js)에서 로딩하세요. 웹팩에서 로딩할수 있도록 로더를 설정해야 합니다.</b>  
+<b>:paperclip: TODO: CSS 파일을 엔트리포인트(app.js)에서 로딩하세요. 웹팩에서 로딩할수 있도록 로더를 설정해야 합니다.(index.html)</b>  
 
       1. CSS파일을 JS에서 모듈처럼 가져오려면 css로더필요.  
           그리고 이게 html에 주입이 되려면 스타일로더도 필요.  
@@ -37,7 +37,7 @@
       2. webpack설정파일에 규칙 추가.  
           이렇게 해야 엔트리포인트인 app.js에서 css를 모듈로 임포트 가능  
           
-<b>:paperclip: TODO: 파일을 로딩할수 있도록 웹팩 로더 설정을 추가하세요 (file-loader나 image-loader)</b>
+<b>:paperclip: TODO: 파일을 로딩할수 있도록 웹팩 로더 설정을 추가하세요 (file-loader나 image-loader) (ResultView.js)</b>
 
        1. file-loader설치  
        2. webpack 설정파일에 파일로더 설정 추가  
@@ -48,7 +48,7 @@
  
  ## :star: 1-webpack/3-plugin 웹팩 플러그인
 
-<b> :paperclip: TODO: 아래 플러그인을 추가해서 번들 결과를 만들어 보세요.</b>  
+<b> :paperclip: TODO: 아래 플러그인을 추가해서 번들 결과를 만들어 보세요.(webpack.config.js)</b>  
     1. BannerPlugin: 결과물에 빌드 시간을 출력하세요.  
     2. HtmlWebpackPlugin: 동적으로 html 파일을 생성하세요.  
     3. CleanWebpackPlugin: 빌드 전에 아웃풋 폴더를 깨끗히 정리하세요.  
@@ -82,7 +82,7 @@
 
  ## :star: 2-babel/1-babel 바벨
 
-<b> :paperclip: TODO: babel-loader를 구성해 보세요.</b>  
+<b> :paperclip: TODO: babel-loader를 구성해 보세요.(webpack.config.js)</b>  
 
       1. npm i babel-loader
       2. 설치 후 바벨로더 설정해주기.
@@ -93,7 +93,7 @@
        * 바벨로더가 엔트리포인트부터 모든 js파일 찾아갈 때 노드모듈 파일은 exclude로 빼주기
 
       
-<b>:paperclip: TODO: IE11에서도 동작하는 자바스크립트로 변환할수 있게 바벨을 구성하세요.</b>
+<b>:paperclip: TODO: IE11에서도 동작하는 자바스크립트로 변환할수 있게 바벨을 구성하세요.(babel.config.js)</b>
 
         1. preset을 설치
         2. 이 단계에서 build를 실행하는데 babel/core를 찾을 수 없다는 에러 메시지만 뜨길래
@@ -112,8 +112,8 @@
     
  ## :star: 2-babel/2-sass 사스
 
-<b> :paperclip: TODO: SASS 코드를 사용할수 있겠끔 sass-loader를 구성하세요.</b>  
-<b> :paperclip: TODO: app.css 파일이 사라졌습니다. 이제는 app.scss를 불러올수 있도록 웹팩 구성을 추가하세요.</b>  
+<b> :paperclip: TODO: SASS 코드를 사용할수 있겠끔 sass-loader를 구성하세요.(webpack.config.js)</b>  
+<b> :paperclip: TODO: app.css 파일이 사라졌습니다. 이제는 app.scss를 불러올수 있도록 웹팩 구성을 추가하세요.(app.js)</b>  
 
 
             1.
@@ -135,15 +135,15 @@
 
  
     
- ## :star: 3-lint/2-eslint ES린트
+ ## :star: 3-lint/1-eslint ES린트
 
-<b> :paperclip: TODO: eslint를 구성해 보세요.</b>  
+<b> :paperclip: TODO: eslint를 구성해 보세요.(.eslintrc.js)</b>  
 
     1. npm i eslint
     2. npx eslint --init 한 후 터미널에서 설정을 선택해줌
     3. 린트설정파일에 설정이 생성됨
     
-<b> :paperclip: TODO eslint가 중복 세미콜론을 제거합니다.</b>  
+<b> :paperclip: TODO eslint가 중복 세미콜론을 제거합니다.(app.js)</b>  
 
     1. package.json에 lint스크립트 추가해줌.
         --fix옵션으로 자동으로 소스 고쳐지도록(문제에 나온 중복 세미콜론 제거됨)
@@ -151,6 +151,28 @@
          10:7  error  'foo' is assigned a value but never used  no-unused-vars
         이와 같은 에러를 볼 수 있는데 foo 변수가 사용되지 않는다는 경고임
         
+
+
+
+ ## :star: 3-lint/2-prettier 프리티어
+
+<b> :paperclip: TODO: Prettier가 스타일을 수정합니다.(app.js)</b>  
+
+    1. npm i prettier 로 프리티어 설치
+    2. npx prettier src/app.js --write 로 코드 정리
+      싱글쿼터가 더블쿼트로, 생략된 세미콜론이 추가됨, 애로우펑션 빈공간, 인덴트 추가
+      
+<b> :paperclip: TODO: 프리티어 설정을 추가하세요.(.eslintrc.js)</b>  
+
+    1. app.js에서 한것처럼 수동으로 돌리는건 귀찮음.
+        때문에 자동으로 코드 수정되도록 설정하기
+
+        npm i eslint-config-pretter eslint-plugin-prettier 로 두가지 설치
+
+    2. rules에 추가해도 되지만 간단하게 extends에서 prettier plugin을 설정해줌
+    3. npm run lint로 이미 추가되어있는 lint 스크립트를 돌려줌
+
+
 
  <br/><br/><br/>
  22.07.04 ~ ing
