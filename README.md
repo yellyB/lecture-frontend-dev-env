@@ -174,6 +174,22 @@
 
 
 
+
+ ## :star: 4-webpack/1-dev-server 웹팩 심화: dev-server
+
+<b> :paperclip: TODO: 여기에 api 서버 프록싱 설정을 추가하세요(webpack.config.js)</b> 
+
+    1. dev-server를 설치
+    2. start로 실행해보면
+      브라우저 network탭의 ajax에서 keywords가 404에러인것 볼 수 있음
+      -> 서버를 구동시켜줘야함
+      server폴더로 이동해서 똑같이 서버 실행시켜준다. (PORT:8081로 실행될거임)
+    3. CORS 정책 해결을 위해 webpack설정파일에 프록시 설정해줌
+    
+     proxy:{
+        '/api':'http://localhost:8081'  // 해당 URL로 들어오는 요청을 8081포트로 보냄
+       }
+   
  <br/><br/><br/>
  22.07.04 ~ ing
  
