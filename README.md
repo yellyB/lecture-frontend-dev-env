@@ -203,7 +203,7 @@
     개발시에 좀 더 빠르게 화면을 개발할 수 있다.  
     HMR를 제대로 사용하려면 사용하는 모듈이 HMR인터페이스를 맞춰줘야함(강의 핫 로딩 참고)  
     
-<b> :paperclip: TODO: 여기에 핫로딩을 설정하세요(webpack.config.js)</b> 
+<b> :paperclip: TODO: 여기에 핫로딩을 설정하세요(webpack.config.js)</b>  
 <b> :paperclip: TODO: 아래 코드를 수정해 보세요(variables.scss)</b> 
     
     hot: true // 웹팩 설정파일 devServer에 이 옵션만 추가하면 된다
