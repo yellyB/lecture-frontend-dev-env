@@ -20,6 +20,7 @@ module.exports = {
       "/api": "http://localhost:8081"
     },
     // TODO: 여기에 핫로딩을 설정하세요
+    hot: true // 이 옵션만 추가하면 된다
   },
   module: {
     rules: [
