@@ -190,6 +190,26 @@
         '/api':'http://localhost:8081'  // 해당 URL로 들어오는 요청을 8081포트로 보냄
        }
    
+   
+   
+   
+   
+ ## :star: 4-webpack/2-hot 웹팩 심화: 핫로딩
+
+  :notebook: note  
+  hot module replacement  
+  : 변경된 모듈만 갈아치운다.  
+    브라우저 콘솔에 [HMR] Waiting for update signal from WDS... 라고 뜨는것이 바로 이것  
+    개발시에 좀 더 빠르게 화면을 개발할 수 있다.  
+    HMR를 제대로 사용하려면 사용하는 모듈이 HMR인터페이스를 맞춰줘야함(강의 핫 로딩 참고)  
+    
+<b> :paperclip: TODO: 여기에 핫로딩을 설정하세요(webpack.config.js)</b> 
+<b> :paperclip: TODO: 아래 코드를 수정해 보세요(variables.scss)</b> 
+    
+    hot: true // 웹팩 설정파일 devServer에 이 옵션만 추가하면 된다
+    
+    
+
  <br/><br/><br/>
  22.07.04 ~ ing
  
