@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>검색<%= env %></title>
   </head>
   <body>
@@ -10,13 +10,13 @@
       <header>
         <h2 class="container">검색</h2>
       </header>
-  
+
       <div class="container">
         <form class="FormView">
-          <input type="text" placeholder="검색어를 입력하세요" autofocus>
+          <input type="text" placeholder="검색어를 입력하세요" autofocus />
           <button type="reset" class="btn-reset"></button>
         </form>
-  
+
         <div class="content">
           <div id="tabs"></div>
           <div id="search-keyword"></div>
@@ -27,6 +27,8 @@
     </div>
 
     <!-- TODO: 외부 라이브러리 axios를 로딩할수 있도록 웹팩에서 파일을 복사하세요 -->
+    <!--  ㄴ> npm i copy-webpack-plugin 설치 & webpack설정파일에 externals설정해줘서 axios가 빌드에 미포함되도록 -->
+
     <script type="text/javascript" src="axios.min.js"></script>
   </body>
 </html>
