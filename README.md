@@ -247,7 +247,9 @@
     
 
  <br/><br/><br/>
- 22.07.04 ~ 22.08.08
+ 22.07.04 ~ 22.08.08  
+ ![image](https://user-images.githubusercontent.com/50893303/184517499-7a00bbe7-5c08-4997-8f78-d30ab49a54fd.png)
+
  
  ---
  <br/><br/><br/>
