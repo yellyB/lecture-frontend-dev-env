@@ -209,6 +209,42 @@
     hot: true // 웹팩 설정파일 devServer에 이 옵션만 추가하면 된다
     
     
+    
+ ## :star: 4-webpack/3-optimazation 웹팩 심화: 최적화
+
+    
+<b> :paperclip: TODO: 환경변수 NODE_ENV에 따라 development나 production 값을 설정하세요(webpack.config.js)</b>  
+
+        -> mode 변수를 선언해서 처리
+
+<b> :paperclip: TODO: 여기에 최적화 설정을 구성하세요(webpack.config.js)</b>  
+  
+  :notebook: note  
+  방법1: css압축. css파일의 빈 칸 제거 (optimize-css-assets-webpack-plugin)  
+  방법2: console.log제거 (terser-webpack-plugin)  
+  
+      1. npm i optimize-css-assets-webpack-plugin 후 설정 추가
+      2. npm i terser-webpack-plugin 후 설정 추가
+  
+  
+<b> :paperclip: TODO: 외부 라이브러리 axios를 로딩할수 있도록 웹팩에서 파일을 복사하세요(index.html)</b> 
+
+
+        ㄴ> npm i copy-webpack-plugin 설치 & webpack설정파일에 externals설정해줘서 axios가 빌드에 미포함되도록
+        
+  :notebook: note  
+  1. 코드 스플리팅  
+  빌드 파일 용량이 커지는 경우 엔트리 포인트를 추가해서 결과 파일을 추가로 만들 수 있는데 이때 두 파일에 코드가 중복되는 부분이 있을 것이다.  
+  optimization 설정에서 minimizer아래에 splitChunks에 chunks: "all"로 설정해주면 중복되는 코드는 venders-[파일이름].js에 빌드된다.  
+  하지만 위 과정은 수동이라 불편. 다이나믹 임포트를 해주기 위해 app.js에서 webpakChunkName 이라고 특별한 주석을 추가해주면 알아서 위의 과정을 수행해줌  
+  
+  2. externals  
+  번들하지 말아야 할 대상은 빌드 대상에서 뺄 수 있다.  
+  예를들어 axios같은 경우 npm에서 다운받았기 때문에 이미 빌드 파일이 있음. 이걸 그대로 사용하는것도 웹팩에서 지원해준다. (copy-webpack-plugin)  
+  
+    
+    
+    
 
  <br/><br/><br/>
  22.07.04 ~ 22.08.08
